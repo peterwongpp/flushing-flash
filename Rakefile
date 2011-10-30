@@ -1,5 +1,14 @@
 # encoding: utf-8
 
+# Process of development:
+#   1. update the version in lib/flushing-flash/version.rb
+#   2. git commit -am "bump version to 0.1.0" # please update the version number
+#   3. do the actual coding and update (hopfully with tests)
+#   4. commit
+#   5. goto 3 if needed :) else goto 6
+#   6. rake install to install locally (and hopfully test it with test applications)
+#   7. rake release
+
 require 'rubygems'
 require 'bundler'
 begin
