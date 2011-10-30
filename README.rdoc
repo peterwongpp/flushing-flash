@@ -1,19 +1,82 @@
-= flushing-flash
+= Flushing Flash
 
-Description goes here.
+To provide helper methods for handling rails flash messages.
 
-== Contributing to flushing-flash
- 
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
-* Fork the project
-* Start a feature/bugfix branch
-* Commit and push until you are happy with your contribution
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+== Installation
 
-== Copyright
+=== Rails 3.0
 
-Copyright (c) 2011 PeterWong. See LICENSE.txt for
-further details.
+Put the following into the Gemfile and run `bundle install`
 
+    gem 'flushing_flash'
+
+== Usage
+    
+==== to push a flash message
+
+    push_flash(message_type, *args)
+
+==== examples:
+
+    1.1) push_flash(:success)
+      { message_type: :success, content: I18n.t("flashes.#{controller_name}.#{action_name}.success", {}) }
+    
+    1.2) push_flash(:failure, "User is not authenticated!") # note that the 2nd param is a **String**!
+      { message_type: :failure, content: "User is not authenticated!" }
+    
+    1.3) push_flash(:failure, :"users.authenticate") # note that the 2nd param is a **Symbol**!
+      { message_type: :failure, content: I18n.t("flashes.users.authenticate.failure", {}) }
+    
+    1.4) push_flash(:success, name: "Peter")
+      { message_type: :success, content: I18n.t("flashes.#{controller_name}.#{action_name}.success", name: "Peter") }
+    
+    1.5) push_flash(:failure, :"users.authenticate", name: "Peter")
+      { message_type: :success, content: I18nt("flashes.users.authenticate.failure", name: "Peter") }
+    
+    1.6) push_flash(:success, name: "Peter", target: :signin_form)
+      the target will not be passed to the I18n.t! Instead, it is a keyword for identifying the target receving the message.
+      see the (2) part.
+
+=== to pull flash messages from a target
+
+    pull_flash(target=:default)
+
+==== examples:
+
+    2.1) pull_flash # pull from :default target
+      [{message_type: ..., content: ...}, { message_type: ..., content: ...}, ...]
+    
+    2.2) pull_flash(:signin_form)
+      [{message_type: ..., content: ...}, { message_type: ..., content: ...}, ...]
+
+=== check if a target has flash messages or not
+
+    has_flash?(target=:default)
+
+==== examples:
+
+    3.1) has_flash?
+      true / false
+    
+    3.2) has_flash?(:signin_form)
+      true / false
+
+=== return currently hard-coded view for the messages in the target
+
+*** TODO: provide a better way to customize the html output ***
+
+    flush_flash(target=:default)
+
+==== examples:
+
+    4.1) flush_flash
+      <div class="alert-message #{message_type} fade in">
+        <a href="#" class="close">x</a>
+        <p>#{content.html_safe}</p>
+      </div>
+    
+    4.2) flush_flash(:signin_form)
+      <div class="alert-message #{message_type} fade in">
+        <a href="#" class="close">x</a>
+        <p>#{content.html_safe}</p>
+      </div>
