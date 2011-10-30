@@ -12,15 +12,17 @@ end
 require 'rake'
 
 require 'jeweler'
+require './lib/flushing-flash/version.rb'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "flushing-flash"
   gem.homepage = "http://github.com/peterwongpp/flushing-flash"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "To provide helper methods for handling rails flash messages."
+  gem.description = "To provide helper methods for handling rails flash messages."
   gem.email = "peter@peterwongpp.com"
   gem.authors = ["PeterWong"]
+  gem.version = FlushingFlash::Version::STRING
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
