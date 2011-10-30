@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
+    "flushing-flash.gemspec",
     "lib/flushing-flash.rb",
     "lib/flushing-flash/version.rb",
     "test/helper.rb",
