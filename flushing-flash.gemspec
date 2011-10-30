@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{flushing-flash}
-  s.version = "0.2.0"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{PeterWong}]
@@ -25,6 +25,8 @@ Gem::Specification.new do |s|
     "Rakefile",
     "flushing-flash.gemspec",
     "lib/flushing-flash.rb",
+    "lib/flushing-flash/action_controller_methods.rb",
+    "lib/flushing-flash/action_view_methods.rb",
     "lib/flushing-flash/version.rb",
     "test/helper.rb",
     "test/test_flushing-flash.rb"
