@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{flushing-flash}
-  s.version = "0.2.2"
+  s.version = "0.2.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{PeterWong}]
-  s.date = %q{2011-10-30}
+  s.date = %q{2011-11-04}
   s.description = %q{To provide helper methods for handling rails flash messages.}
   s.email = %q{peter@peterwongpp.com}
   s.extra_rdoc_files = [
