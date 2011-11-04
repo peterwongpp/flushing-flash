@@ -19,7 +19,7 @@ module FlushingFlash
         
         if msgs.any?
           if using_template
-            render using_template, locals: { messages: msgs }
+            render partial: using_template, locals: { messages: msgs }
           else
             msgs.collect do |msg|
               content_tag :div, class: "alert-message #{msg[:message_type]} fade in" do
