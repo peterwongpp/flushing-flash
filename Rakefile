@@ -1,13 +1,13 @@
 # encoding: utf-8
 
 # Process of development:
-#   1. do the actual coding and update (hopfully with tests)
-#   2. commit
-#   3. goto 1 if needed :) else goto 4
-#   4. update the version in lib/flushing-flash/version.rb
-#   5. git commit -am "bump version to 0.1.0" # please update the version number
+#   1. update the version in lib/flushing-flash/version.rb
+#   2. git commit -am "bump version to 0.1.0" # please update the version number
+#   3. do the actual coding and update (hopfully with tests)
+#   4. commit
+#   5. goto 3 if needed :) else goto 6
 #   6. rake install to install locally (and hopfully test it with test applications)
-#   7. rake release
+#   7. rake release # will be automatically git tagged!!!
 
 require 'rubygems'
 require 'bundler'
