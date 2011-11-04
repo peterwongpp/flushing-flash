@@ -86,4 +86,4 @@ Put the following into the Gemfile and run `bundle install`
 ==== 0.2.3
 
 1. fixed error if passing `:using` to pull `flush_flash` method.
-    Now you could make use of `:using` option to use your own partial for rendering the flash messages.
+  Now you could make use of `:using` option to use your own partial for rendering the flash messages.
