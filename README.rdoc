@@ -12,11 +12,11 @@ Put the following into the Gemfile and run `bundle install`
 
 == Usage
     
-==== to push a flash message
+==== 1. to push a flash message
 
   push_flash(message_type, *args)
 
-==== examples:
+examples:
 
   1.1. push_flash(:success)
     { message_type: :success, content: I18n.t("flashes.#{controller_name}.#{action_name}.success", {}) }
@@ -37,11 +37,11 @@ Put the following into the Gemfile and run `bundle install`
     the target will not be passed to the I18n.t! Instead, it is a keyword for identifying the target receving the message.
     see the (2) part.
 
-=== to pull flash messages from a target
+=== 2. to pull flash messages from a target
 
   pull_flash(target=:default)
 
-==== examples:
+examples:
 
   2.1. pull_flash # pull from :default target
     [{message_type: ..., content: ...}, { message_type: ..., content: ...}, ...]
@@ -49,11 +49,11 @@ Put the following into the Gemfile and run `bundle install`
   2.2. pull_flash(:signin_form)
     [{message_type: ..., content: ...}, { message_type: ..., content: ...}, ...]
 
-=== check if a target has flash messages or not
+=== 3. check if a target has flash messages or not
 
   has_flash?(target=:default)
 
-==== examples:
+examples:
 
   3.1. has_flash?
     true / false
@@ -61,13 +61,13 @@ Put the following into the Gemfile and run `bundle install`
   3.2. has_flash?(:signin_form)
     true / false
 
-=== return currently hard-coded view for the messages in the target
+=== 4. return currently hard-coded view for the messages in the target
 
 *** TODO: provide a better way to customize the html output ***
 
   flush_flash(target=:default)
 
-==== examples:
+examples:
 
   4.1. flush_flash
     <div class="alert-message #{message_type} fade in">
