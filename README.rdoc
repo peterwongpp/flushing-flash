@@ -12,7 +12,7 @@ Put the following into the Gemfile and run `bundle install`
 
 == Usage
     
-==== 1. to push a flash message
+==== 1. To push a flash message
 
   push_flash(message_type, *args)
 
@@ -37,7 +37,7 @@ examples:
     the target will not be passed to the I18n.t! Instead, it is a keyword for identifying the target receving the message.
     see the (2) part.
 
-=== 2. to pull flash messages from a target
+=== 2. To pull flash messages from a target
 
   pull_flash(target=:default)
 
@@ -49,7 +49,7 @@ examples:
   2.2. pull_flash(:signin_form)
     [{message_type: ..., content: ...}, { message_type: ..., content: ...}, ...]
 
-=== 3. check if a target has flash messages or not
+=== 3. To check if a target has flash messages or not
 
   has_flash?(target=:default)
 
@@ -61,7 +61,7 @@ examples:
   3.2. has_flash?(:signin_form)
     true / false
 
-=== 4. return currently hard-coded view for the messages in the target
+=== 4. To return currently hard-coded view for the messages in the target
 
 *** TODO: provide a better way to customize the html output ***
 
@@ -81,6 +81,15 @@ examples:
       <p>#{content.html_safe}</p>
     </div>
 
+=== 5. To use self-defined partial for rendering the flash messages
+
+  flush_flash(target=:default, options={})
+
+examples:
+
+  5.1 flush_flash(using: "shared/flash_messages")
+    HTML output for the partial app/views/shared/_flash_messages.html.erb
+  
 === Change Logs
 
 ==== 0.2.3
