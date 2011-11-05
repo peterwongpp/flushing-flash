@@ -8,7 +8,16 @@
 </head>
 <body>
 
+<%- if has_flash?(:default) %>
+  <h3>Default Flash Messages:</h3>
+  <%= flush_flash(:default, using: "shared/flash_messages") %>
+<%- end %>
+
 <%= yield %>
+
+<h3>Flash Messages Assigned to :bottom will be in the following</h3>
+
+<%= flush_flash(:bottom, using: "shared/flash_messages") %>
 
 </body>
 </html>

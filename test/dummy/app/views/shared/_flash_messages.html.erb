@@ -1,0 +1,5 @@
+<%- messages.each do |message| %>
+  <div>
+    <%= message[:message_type] %>: <%= message[:content] %>
+  </div>
+<%- end %>

@@ -2,4 +2,13 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  flashes:
+    posts:
+      create:
+        failure:  "Post failed to be created."
+        success:  "Post created successfully with title %{post_title}"
+      destroy:
+        failure:  "[F] Post deleted."
+        success:  "[S] Post deleted."
+      update:
+        failure:  "Failed to update the post."

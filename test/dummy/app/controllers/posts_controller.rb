@@ -44,9 +44,13 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        push_flash(:success, i18n_options: {post_title: @post.title})
+        
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
+        push_flash(:failure, target: :bottom)
+        
         format.html { render action: "new" }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
@@ -60,9 +64,13 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
+        push_flash(:success, "Post updated successfully. The title is now #{@post.title}")
+        
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { head :ok }
       else
+        push_flash(:failure, :"posts.update")
+        
         format.html { render action: "edit" }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
@@ -76,6 +84,13 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
+      push_flash(:success)
+      push_flash(:success, "2nd success message")
+      push_flash(:failure)
+      push_flash(:success, target: :bottom)
+      push_flash(:success)
+      push_flash(:failure, target: :bottom)
+      
       format.html { redirect_to posts_url }
       format.json { head :ok }
     end
