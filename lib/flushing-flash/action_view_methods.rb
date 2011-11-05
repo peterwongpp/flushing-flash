@@ -24,7 +24,7 @@ module FlushingFlash
           else
             msgs.collect do |msg|
               content_tag :div, class: "flash-message #{msg[:message_type]}" do
-                concat content_tag(:p, (html_safe? msg[:content].html_safe : msg[:content]))
+                concat content_tag(:p, (html_safe ? msg[:content].html_safe : msg[:content]))
               end
             end.join.html_safe
           end
