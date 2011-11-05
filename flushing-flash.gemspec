@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{flushing-flash}
-  s.version = "0.2.3"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{PeterWong}]
-  s.date = %q{2011-11-04}
+  s.date = %q{2011-11-05}
   s.description = %q{To provide helper methods for handling rails flash messages.}
   s.email = %q{peter@peterwongpp.com}
   s.extra_rdoc_files = [
@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
+    ".rvmrc",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
@@ -28,6 +29,72 @@ Gem::Specification.new do |s|
     "lib/flushing-flash/action_controller_methods.rb",
     "lib/flushing-flash/action_view_methods.rb",
     "lib/flushing-flash/version.rb",
+    "test/dummy/.gitignore",
+    "test/dummy/Gemfile",
+    "test/dummy/Gemfile.lock",
+    "test/dummy/README",
+    "test/dummy/Rakefile",
+    "test/dummy/app/assets/images/rails.png",
+    "test/dummy/app/assets/javascripts/application.js",
+    "test/dummy/app/assets/javascripts/posts.js.coffee",
+    "test/dummy/app/assets/stylesheets/application.css",
+    "test/dummy/app/assets/stylesheets/posts.css.scss",
+    "test/dummy/app/assets/stylesheets/scaffolds.css.scss",
+    "test/dummy/app/controllers/application_controller.rb",
+    "test/dummy/app/controllers/posts_controller.rb",
+    "test/dummy/app/helpers/application_helper.rb",
+    "test/dummy/app/helpers/posts_helper.rb",
+    "test/dummy/app/mailers/.gitkeep",
+    "test/dummy/app/models/.gitkeep",
+    "test/dummy/app/models/post.rb",
+    "test/dummy/app/views/layouts/application.html.erb",
+    "test/dummy/app/views/posts/_form.html.erb",
+    "test/dummy/app/views/posts/edit.html.erb",
+    "test/dummy/app/views/posts/index.html.erb",
+    "test/dummy/app/views/posts/new.html.erb",
+    "test/dummy/app/views/posts/show.html.erb",
+    "test/dummy/app/views/shared/_flash_messages.html.erb",
+    "test/dummy/config.ru",
+    "test/dummy/config/application.rb",
+    "test/dummy/config/boot.rb",
+    "test/dummy/config/database.yml",
+    "test/dummy/config/environment.rb",
+    "test/dummy/config/environments/development.rb",
+    "test/dummy/config/environments/production.rb",
+    "test/dummy/config/environments/test.rb",
+    "test/dummy/config/initializers/backtrace_silencers.rb",
+    "test/dummy/config/initializers/inflections.rb",
+    "test/dummy/config/initializers/mime_types.rb",
+    "test/dummy/config/initializers/secret_token.rb",
+    "test/dummy/config/initializers/session_store.rb",
+    "test/dummy/config/initializers/wrap_parameters.rb",
+    "test/dummy/config/locales/en.yml",
+    "test/dummy/config/routes.rb",
+    "test/dummy/db/migrate/20111105100343_create_posts.rb",
+    "test/dummy/db/schema.rb",
+    "test/dummy/db/seeds.rb",
+    "test/dummy/lib/assets/.gitkeep",
+    "test/dummy/lib/tasks/.gitkeep",
+    "test/dummy/log/.gitkeep",
+    "test/dummy/public/404.html",
+    "test/dummy/public/422.html",
+    "test/dummy/public/500.html",
+    "test/dummy/public/favicon.ico",
+    "test/dummy/public/index.html",
+    "test/dummy/public/robots.txt",
+    "test/dummy/script/rails",
+    "test/dummy/test/fixtures/.gitkeep",
+    "test/dummy/test/fixtures/posts.yml",
+    "test/dummy/test/functional/.gitkeep",
+    "test/dummy/test/functional/posts_controller_test.rb",
+    "test/dummy/test/integration/.gitkeep",
+    "test/dummy/test/performance/browsing_test.rb",
+    "test/dummy/test/test_helper.rb",
+    "test/dummy/test/unit/.gitkeep",
+    "test/dummy/test/unit/helpers/posts_helper_test.rb",
+    "test/dummy/test/unit/post_test.rb",
+    "test/dummy/vendor/assets/stylesheets/.gitkeep",
+    "test/dummy/vendor/plugins/.gitkeep",
     "test/helper.rb",
     "test/test_flushing-flash.rb"
   ]
