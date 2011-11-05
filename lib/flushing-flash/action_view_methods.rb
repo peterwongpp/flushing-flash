@@ -22,9 +22,8 @@ module FlushingFlash
             render partial: using_template, locals: { messages: msgs }
           else
             msgs.collect do |msg|
-              content_tag :div, class: "alert-message #{msg[:message_type]} fade in" do
-                concat link_to("x", "#", class: "close")
-                concat content_tag(:p, msg[:content].html_safe)
+              content_tag :div, class: "flash-message #{msg[:message_type]}" do
+                concat content_tag(:p, msg[:content])
               end
             end.join.html_safe
           end
