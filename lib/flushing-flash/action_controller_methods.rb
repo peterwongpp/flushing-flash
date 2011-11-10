@@ -48,19 +48,6 @@ module FlushingFlash
       def to_flushing_flash_message(message_type, flash_content)
         { message_type: message_type, content: flash_content }
       end
-      
-      def to_flushing_flash_message(message_or_message_type_or_flash_content, flash_content=nil, message_type_if_flash_content_is_nil=nil)
-        if message_or_message_type_or_flash_content.is_a?(Hash)
-          # message
-          return message_or_message_type_or_flash_content
-        elsif flash_content.nil?
-          # flash_content
-          return { message_type: message_type_if_flash_content_is_nil, content: message_or_message_type_or_flash_content }
-        else
-          # message_type with flash_content
-          return { message_type: message_or_message_type_or_flash_content, content: flash_content }
-        end
-      end
     end
   end
 end
