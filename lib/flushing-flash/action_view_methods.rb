@@ -34,4 +34,6 @@ module FlushingFlash
   end
 end
 
-ActionView::Base.send :include, FlushingFlash::ActionViewMethods
+if defined? ActionView
+  ActionView::Base.send :include, FlushingFlash::ActionViewMethods
+end

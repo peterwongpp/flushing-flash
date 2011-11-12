@@ -52,4 +52,6 @@ module FlushingFlash
   end
 end
 
-ActionController::Base.send :include, FlushingFlash::ActionControllerMethods
+if defined? ActionController
+  ActionController::Base.send :include, FlushingFlash::ActionControllerMethods
+end

@@ -33,6 +33,7 @@ Jeweler::Tasks.new do |gem|
   gem.authors = ["PeterWong"]
   gem.version = FlushingFlash::Version::STRING
   # dependencies defined in Gemfile
+  gem.add_dependency 'actionpack', '~> 3'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
